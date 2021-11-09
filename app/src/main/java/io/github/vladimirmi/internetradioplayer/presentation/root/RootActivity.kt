@@ -80,7 +80,7 @@ class RootActivity : BaseActivity<RootPresenter, RootView>(), RootView {
         val startPlay = intent.getBooleanExtra(ShortcutHelper.EXTRA_PLAY, false)
         val stationName = intent.getStringExtra(ShortcutHelper.EXTRA_STATION_NAME)
         if (intent.hasExtra(PlayerService.EXTRA_STATION_ID)) {
-            presenter.showStation(intent.getStringExtra(PlayerService.EXTRA_STATION_ID), startPlay)
+            presenter.showStation(intent.getStringExtra(PlayerService.EXTRA_STATION_ID)!!, startPlay)
             intent = null
         } else {
             intent.data?.let {

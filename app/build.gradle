@@ -21,12 +21,12 @@ ext.versionMinor = 3
 ext.versionPatch = 2
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 31
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "io.github.vladimirmi.internetradioplayer"
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 31
         versionCode generateVersionCode()
         versionName generateVersionName()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

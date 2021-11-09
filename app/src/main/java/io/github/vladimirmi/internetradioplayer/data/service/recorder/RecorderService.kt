@@ -27,7 +27,7 @@ class RecorderService : Service() {
             intent == null -> stopSelf()
             intent.hasExtra(EXTRA_START_RECORD) -> {
                 val name = intent.getStringExtra(EXTRA_START_RECORD)
-                recorders.startRecord(intent.data!!, name)
+                recorders.startRecord(intent.data!!, name!!)
             }
             intent.hasExtra(EXTRA_STOP_RECORD) -> {
                 recorders.stopRecord(intent.data!!)

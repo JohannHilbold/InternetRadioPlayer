@@ -83,8 +83,8 @@ class StationParser
     private fun parseFromPlaylistFile(uri: Uri): Station {
         val type = context.contentResolver.getType(uri)
         val name = uri.lastPathSegment ?: ""
-        val content = context.contentResolver.openInputStream(uri).use { stream: InputStream ->
-            stream.bufferedReader().use { it.readText() }
+        val content = context.contentResolver.openInputStream(uri).use { stream ->
+            stream!!.bufferedReader().use { it.readText() }
         }
         return if (type == PLS_TYPE
                 || type == null && name.substringAfterLast('.').toLowerCase() == EXT_PLS) {

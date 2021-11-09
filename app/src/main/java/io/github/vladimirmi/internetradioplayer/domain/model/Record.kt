@@ -65,7 +65,7 @@ data class Record(override val id: String,
             return try {
                 val mmr = Scopes.app.getInstance(MediaMetadataRetriever::class.java)
                 mmr.setDataSource(file.absolutePath)
-                mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION).toLong()
+                mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLong()?:0L
             } catch (e: Exception) {
                 Timber.e(e, file.absolutePath)
                 //todo handle unknown duration (-1)

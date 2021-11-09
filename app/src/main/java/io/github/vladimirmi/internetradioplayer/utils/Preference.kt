@@ -22,7 +22,7 @@ class Preference<T>(
 
     @Suppress("UNCHECKED_CAST")
     private fun <T> findPreference(name: String, default: T): T = with(prefs) {
-        val res: Any = when (default) {
+        val res = when (default) {
             is Long -> getLong(name, default)
             is String -> getString(name, default)
             is Int -> getInt(name, default)

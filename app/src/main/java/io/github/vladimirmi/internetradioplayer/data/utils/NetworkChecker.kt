@@ -16,7 +16,7 @@ class NetworkChecker
 
     private val cm by lazy { context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager }
 
-    fun isAvailable() = cm.activeNetworkInfo != null && cm.activeNetworkInfo.isConnected
+    fun isAvailable() = cm.activeNetworkInfo != null && cm.activeNetworkInfo!!.isConnected
 
     fun singleAvailable(): Single<Boolean> = available().filter { it }.firstOrError()
 
